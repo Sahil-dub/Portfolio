@@ -8,7 +8,6 @@ export const profile = {
   targetRoles:
     "Working Student / Intern roles in Data Analytics, Data Engineering, and ML.",
   resume: {
-    // TODO: Confirm the final resume PDF before deployment.
     href: "/resume/Sahil-Dubey-Resume.pdf",
     filename: "Sahil-Dubey-Resume.pdf",
   },

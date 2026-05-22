@@ -4,6 +4,11 @@ export type SkillCategory = {
   items: string[];
 };
 
+export type LearningArea = {
+  title: string;
+  description: string;
+};
+
 export const skillCategories: SkillCategory[] = [
   {
     title: "Programming & Querying",
@@ -64,8 +69,20 @@ export const skillCategories: SkillCategory[] = [
   },
 ];
 
-export const currentlyLearning = [
-  "PySpark fundamentals",
-  "Docker workflow improvement",
-  "Data pipeline orchestration basics",
+export const currentlyExploring: LearningArea[] = [
+  {
+    title: "PySpark Fundamentals",
+    description:
+      "Learning distributed data processing concepts for scalable ETL and analytics workflows.",
+  },
+  {
+    title: "Docker Workflow Improvements",
+    description:
+      "Improving reproducible development setups for backend and data projects.",
+  },
+  {
+    title: "Data Pipeline Orchestration Basics",
+    description:
+      "Exploring how scheduled workflows, validation steps, and monitoring fit into analytics systems.",
+  },
 ];

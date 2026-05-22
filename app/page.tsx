@@ -17,7 +17,7 @@ import { Container } from "@/components/layout/Container";
 import { MotionFade } from "@/components/ui/MotionFade";
 import { profile } from "@/content/profile";
 import { projects } from "@/content/projects";
-import { currentlyLearning, skillCategories } from "@/content/skills";
+import { currentlyExploring, skillCategories } from "@/content/skills";
 
 const skillIcons = [Code2, BarChart3, LineChart, Database, Server];
 
@@ -55,6 +55,7 @@ export default function Home() {
       <Highlights />
       <FeaturedProjects />
       <SkillsSnapshot />
+      <CurrentlyExploring />
       <AboutMe />
       <ContactCTA resumeExists={resumeExists} />
     </main>
@@ -211,38 +212,43 @@ function SkillsSnapshot() {
             );
           })}
         </div>
-        <MotionFade
-          className="mt-5 rounded-lg border border-dashed border-sky-300/20 bg-sky-300/[0.045] p-5"
-          transition={{ duration: 0.45, delay: 0.12, ease: "easeOut" }}
-        >
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-            <div>
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-md bg-sky-300/10 text-sky-200">
-                  <Rocket aria-hidden="true" className="h-5 w-5" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-white">
-                    Currently learning
-                  </h3>
-                  <p className="mt-1 text-sm text-slate-400">
-                    Active learning areas, not expert-level claims.
-                  </p>
-                </div>
+      </Container>
+    </section>
+  );
+}
+
+function CurrentlyExploring() {
+  return (
+    <section className="border-b border-white/10 py-16 sm:py-24">
+      <Container>
+        <SectionHeader
+          eyebrow="Active learning"
+          title="Currently Exploring"
+          description="Areas I am actively strengthening while building practical data and analytics projects."
+        />
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
+          {currentlyExploring.map((area, index) => (
+            <MotionFade
+              key={area.title}
+              className="group rounded-lg border border-white/10 bg-white/[0.04] p-5 transition duration-300 hover:-translate-y-1 hover:border-sky-300/30 hover:bg-white/[0.055] focus-within:border-sky-300/30"
+              transition={{
+                duration: 0.45,
+                delay: index * 0.08,
+                ease: "easeOut",
+              }}
+            >
+              <div className="flex h-10 w-10 items-center justify-center rounded-md bg-sky-300/10 text-sky-200">
+                <Rocket aria-hidden="true" className="h-5 w-5" />
               </div>
-            </div>
-            <div className="flex flex-wrap gap-2 sm:max-w-xl sm:justify-end">
-              {currentlyLearning.map((item) => (
-                <span
-                  key={item}
-                  className="rounded-md border border-sky-300/15 bg-sky-300/10 px-2.5 py-1 text-xs font-medium text-sky-100"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-        </MotionFade>
+              <h3 className="mt-5 text-lg font-semibold text-white">
+                {area.title}
+              </h3>
+              <p className="mt-3 text-sm leading-6 text-slate-400">
+                {area.description}
+              </p>
+            </MotionFade>
+          ))}
+        </div>
       </Container>
     </section>
   );
@@ -288,8 +294,8 @@ function ContactCTA({ resumeExists }: { resumeExists: boolean }) {
               <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-300 sm:text-base">
                 If Sahil&apos;s projects look relevant for a Data Analytics,
                 Data Engineering, or ML opening, email or LinkedIn is the best
-                next step. Resume download will appear here once the PDF is
-                added to the portfolio.
+                next step. His resume is available alongside the project links
+                for a quick recruiter review.
               </p>
             </div>
 
@@ -327,13 +333,13 @@ function ContactCTA({ resumeExists }: { resumeExists: boolean }) {
                   </Button>
                 ) : (
                   <span className="inline-flex min-h-11 items-center justify-center rounded-md border border-dashed border-white/15 px-4 text-center text-sm font-medium text-slate-400">
-                    Resume PDF missing
+                    Resume unavailable
                   </span>
                 )}
               </div>
               {!resumeExists && (
                 <p className="mt-3 text-xs leading-5 text-slate-500">
-                  Expected file: {profile.resume.href}
+                  Resume download will be restored after the PDF is added.
                 </p>
               )}
             </div>
