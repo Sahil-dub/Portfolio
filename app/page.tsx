@@ -1,5 +1,3 @@
-import { existsSync } from "node:fs";
-import { join } from "node:path";
 import {
   BarChart3,
   Code2,
@@ -45,10 +43,6 @@ const highlights = [
 ];
 
 export default function Home() {
-  const resumeExists = existsSync(
-    join(process.cwd(), "public", "resume", profile.resume.filename),
-  );
-
   return (
     <main className="flex-1 overflow-hidden">
       <Hero />
@@ -57,7 +51,7 @@ export default function Home() {
       <SkillsSnapshot />
       <CurrentlyExploring />
       <AboutMe />
-      <ContactCTA resumeExists={resumeExists} />
+      <ContactCTA />
     </main>
   );
 }
@@ -280,7 +274,7 @@ function AboutMe() {
   );
 }
 
-function ContactCTA({ resumeExists }: { resumeExists: boolean }) {
+function ContactCTA() {
   return (
     <section className="py-16 sm:py-24">
       <Container>
@@ -322,26 +316,15 @@ function ContactCTA({ resumeExists }: { resumeExists: boolean }) {
                 >
                   {profile.links.githubLabel}
                 </Button>
-                {resumeExists ? (
-                  <Button
-                    href={profile.resume.href}
-                    download
-                    aria-label="Download Sahil Dubey resume"
-                  >
-                    <Download aria-hidden="true" className="mr-2 h-4 w-4" />
-                    Resume
-                  </Button>
-                ) : (
-                  <span className="inline-flex min-h-11 items-center justify-center rounded-md border border-dashed border-white/15 px-4 text-center text-sm font-medium text-slate-400">
-                    Resume unavailable
-                  </span>
-                )}
+                <Button
+                  href={profile.resume.href}
+                  download
+                  aria-label="Download Sahil Dubey resume"
+                >
+                  <Download aria-hidden="true" className="mr-2 h-4 w-4" />
+                  Resume
+                </Button>
               </div>
-              {!resumeExists && (
-                <p className="mt-3 text-xs leading-5 text-slate-500">
-                  Resume download will be restored after the PDF is added.
-                </p>
-              )}
             </div>
           </div>
         </MotionFade>

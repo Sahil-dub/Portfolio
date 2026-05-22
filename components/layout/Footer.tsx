@@ -1,13 +1,7 @@
-import { existsSync } from "node:fs";
-import { join } from "node:path";
 import { Container } from "@/components/layout/Container";
 import { profile } from "@/content/profile";
 
 export function Footer() {
-  const resumeExists = existsSync(
-    join(process.cwd(), "public", "resume", profile.resume.filename),
-  );
-
   const links = [
     { href: `mailto:${profile.email}`, label: "Email" },
     { href: profile.links.linkedin, label: profile.links.linkedinLabel },
@@ -36,17 +30,13 @@ export function Footer() {
               {link.label}
             </a>
           ))}
-          {resumeExists ? (
-            <a
-              href={profile.resume.href}
-              download
-              className="rounded-sm transition hover:text-white focus:outline-none focus:ring-2 focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-950"
-            >
-              Resume
-            </a>
-          ) : (
-            <span className="text-slate-600">Resume pending</span>
-          )}
+          <a
+            href={profile.resume.href}
+            download
+            className="rounded-sm transition hover:text-white focus:outline-none focus:ring-2 focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-950"
+          >
+            Resume
+          </a>
         </nav>
       </Container>
     </footer>
