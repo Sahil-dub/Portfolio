@@ -1,34 +1,56 @@
+export type ProjectType = "Analytics" | "Data Engineering" | "ML" | "Backend";
+
 export type Project = {
   slug: string;
   title: string;
-  summary: string;
-  focus: string[];
-  status: "placeholder" | "published";
+  businessProblem: string;
+  techStack: string[];
+  status: string;
+  types: ProjectType[];
+  githubUrl: string;
+  demoUrl: string;
+  caseStudyUrl: string;
+  previewImage: string;
 };
 
 export const projects: Project[] = [
   {
     slug: "analytics-case-study",
     title: "Analytics Case Study",
-    summary:
-      "Placeholder project for a recruiter-readable analytics case study.",
-    focus: ["Data Analytics", "SQL", "Visualization"],
-    status: "placeholder",
+    businessProblem:
+      "Turn raw operational data into a focused dashboard that helps stakeholders spot trends, bottlenecks, and next actions quickly.",
+    techStack: ["Python", "SQL", "PostgreSQL", "Dashboarding"],
+    status: "Portfolio draft",
+    types: ["Analytics"],
+    githubUrl: "#",
+    demoUrl: "#",
+    caseStudyUrl: "#",
+    previewImage: "/projects/analytics-preview.svg",
   },
   {
     slug: "data-pipeline-project",
     title: "Data Pipeline Project",
-    summary:
-      "Placeholder project for a data engineering workflow and pipeline case study.",
-    focus: ["Data Engineering", "Python", "ETL"],
-    status: "placeholder",
+    businessProblem:
+      "Design a reliable ingestion and transformation workflow so clean data is available for analysis without manual spreadsheet cleanup.",
+    techStack: ["Python", "FastAPI", "PostgreSQL", "ETL"],
+    status: "Portfolio draft",
+    types: ["Data Engineering", "Backend"],
+    githubUrl: "#",
+    demoUrl: "#",
+    caseStudyUrl: "#",
+    previewImage: "/projects/pipeline-preview.svg",
   },
   {
     slug: "machine-learning-project",
     title: "Machine Learning Project",
-    summary:
-      "Placeholder project for a practical ML model development case study.",
-    focus: ["Machine Learning", "Modeling", "Evaluation"],
-    status: "placeholder",
+    businessProblem:
+      "Build and evaluate a practical model workflow that makes predictions explainable enough for non-technical review.",
+    techStack: ["Python", "scikit-learn", "Pandas", "Model evaluation"],
+    status: "Portfolio draft",
+    types: ["ML", "Analytics"],
+    githubUrl: "#",
+    demoUrl: "#",
+    caseStudyUrl: "#",
+    previewImage: "/projects/ml-preview.svg",
   },
 ];

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Machine learning workflow placeholder</title>
+  <desc id="desc">A dark machine learning dashboard preview with evaluation chart and model cards.</desc>
+  <rect width="960" height="540" fill="#020617"/>
+  <rect x="56" y="54" width="848" height="432" rx="18" fill="#0f172a" stroke="#1e293b"/>
+  <rect x="92" y="96" width="300" height="342" rx="14" fill="#111827" stroke="#334155"/>
+  <rect x="430" y="96" width="434" height="158" rx="14" fill="#111827" stroke="#334155"/>
+  <rect x="430" y="280" width="434" height="158" rx="14" fill="#111827" stroke="#334155"/>
+  <path d="M138 376C174 250 218 320 252 244C284 174 326 196 350 138" fill="none" stroke="#38bdf8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M138 376C178 338 220 316 252 292C292 264 326 232 350 202" fill="none" stroke="#22c55e" stroke-width="6" stroke-linecap="round" opacity=".75"/>
+  <rect x="470" y="132" width="126" height="16" rx="8" fill="#e2e8f0"/>
+  <rect x="470" y="166" width="330" height="10" rx="5" fill="#334155"/>
+  <rect x="470" y="196" width="280" height="10" rx="5" fill="#334155"/>
+  <rect x="470" y="316" width="126" height="16" rx="8" fill="#e2e8f0"/>
+  <rect x="470" y="352" width="84" height="48" rx="10" fill="#38bdf8"/>
+  <rect x="584" y="352" width="84" height="48" rx="10" fill="#22c55e"/>
+  <rect x="698" y="352" width="84" height="48" rx="10" fill="#a78bfa"/>
+</svg>

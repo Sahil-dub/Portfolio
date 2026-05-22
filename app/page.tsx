@@ -1,4 +1,5 @@
-import { ArrowRight, BarChart3, Database, LineChart, Mail } from "lucide-react";
+import { BarChart3, Database, LineChart, Mail } from "lucide-react";
+import { ProjectCard } from "@/components/projects/ProjectCard";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/layout/Container";
@@ -105,34 +106,7 @@ function FeaturedProjects() {
         />
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {projects.map((project, index) => (
-            <MotionFade
-              key={project.slug}
-              className="group flex min-h-64 flex-col rounded-lg border border-white/10 bg-white/[0.04] p-5 transition hover:border-sky-300/30 hover:bg-white/[0.06]"
-              transition={{ duration: 0.45, delay: index * 0.08, ease: "easeOut" }}
-            >
-              <div className="flex items-start justify-between gap-4">
-                <Badge className="border-white/10 bg-white/5 text-slate-300">
-                  Preview
-                </Badge>
-                <ArrowRight className="h-4 w-4 text-slate-500 transition group-hover:translate-x-0.5 group-hover:text-sky-200" />
-              </div>
-              <h3 className="mt-6 text-xl font-semibold tracking-tight text-white">
-                {project.title}
-              </h3>
-              <p className="mt-3 flex-1 text-sm leading-6 text-slate-400">
-                {project.summary}
-              </p>
-              <div className="mt-6 flex flex-wrap gap-2">
-                {project.focus.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-md border border-white/10 px-2.5 py-1 text-xs text-slate-300"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </MotionFade>
+            <ProjectCard key={project.slug} project={project} index={index} />
           ))}
         </div>
       </Container>

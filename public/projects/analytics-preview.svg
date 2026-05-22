@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Analytics dashboard placeholder</title>
+  <desc id="desc">A dark analytics dashboard preview with chart cards and KPI blocks.</desc>
+  <rect width="960" height="540" fill="#020617"/>
+  <rect x="56" y="54" width="848" height="432" rx="18" fill="#0f172a" stroke="#1e293b"/>
+  <rect x="92" y="94" width="204" height="92" rx="12" fill="#111827" stroke="#334155"/>
+  <rect x="326" y="94" width="204" height="92" rx="12" fill="#111827" stroke="#334155"/>
+  <rect x="560" y="94" width="204" height="92" rx="12" fill="#111827" stroke="#334155"/>
+  <rect x="92" y="224" width="420" height="214" rx="14" fill="#111827" stroke="#334155"/>
+  <rect x="548" y="224" width="316" height="214" rx="14" fill="#111827" stroke="#334155"/>
+  <path d="M128 382L186 342L244 358L302 298L360 322L418 260L476 284" fill="none" stroke="#38bdf8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="592" y="344" width="34" height="54" rx="6" fill="#38bdf8"/>
+  <rect x="650" y="294" width="34" height="104" rx="6" fill="#22c55e"/>
+  <rect x="708" y="318" width="34" height="80" rx="6" fill="#a78bfa"/>
+  <rect x="766" y="264" width="34" height="134" rx="6" fill="#38bdf8"/>
+  <rect x="118" y="120" width="96" height="12" rx="6" fill="#94a3b8"/>
+  <rect x="118" y="146" width="132" height="20" rx="8" fill="#e2e8f0"/>
+  <rect x="352" y="120" width="96" height="12" rx="6" fill="#94a3b8"/>
+  <rect x="352" y="146" width="118" height="20" rx="8" fill="#e2e8f0"/>
+  <rect x="586" y="120" width="96" height="12" rx="6" fill="#94a3b8"/>
+  <rect x="586" y="146" width="140" height="20" rx="8" fill="#e2e8f0"/>
+</svg>
