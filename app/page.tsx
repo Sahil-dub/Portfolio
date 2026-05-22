@@ -26,10 +26,34 @@ const skillGroups = [
   },
 ];
 
+const highlights = [
+  {
+    label: "APIs Built",
+    value: "2",
+    detail: "FastAPI-backed project workflows",
+  },
+  {
+    label: "ML Pipelines",
+    value: "1",
+    detail: "Sensor quality prediction workflow",
+  },
+  {
+    label: "Dashboards",
+    value: "2",
+    detail: "Analytics-first project outputs",
+  },
+  {
+    label: "ETL Workflows",
+    value: "2",
+    detail: "Structured data preparation projects",
+  },
+];
+
 export default function Home() {
   return (
     <main className="flex-1 overflow-hidden">
       <Hero />
+      <Highlights />
       <FeaturedProjects />
       <SkillsSnapshot />
       <AboutMe />
@@ -78,7 +102,7 @@ function Hero() {
             {[
               "Recruiter-readable project proof",
               "Python, SQL, FastAPI, PostgreSQL",
-              "Analytics, pipelines, and practical ML",
+              "Analytics, backend workflows, and practical ML",
             ].map((item) => (
               <div
                 key={item}
@@ -95,16 +119,44 @@ function Hero() {
   );
 }
 
+function Highlights() {
+  return (
+    <section className="border-b border-white/10 py-8">
+      <Container>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {highlights.map((item, index) => (
+            <MotionFade
+              key={item.label}
+              className="rounded-lg border border-white/10 bg-white/[0.04] p-4"
+              transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
+            >
+              <p className="text-3xl font-semibold tracking-tight text-white">
+                {item.value}
+              </p>
+              <p className="mt-2 text-sm font-medium text-sky-200">
+                {item.label}
+              </p>
+              <p className="mt-1 text-xs leading-5 text-slate-400">
+                {item.detail}
+              </p>
+            </MotionFade>
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+}
+
 function FeaturedProjects() {
   return (
     <section className="border-b border-white/10 py-18 sm:py-24">
       <Container>
         <SectionHeader
           eyebrow="Featured projects"
-          title="Proof-oriented project previews"
-          description="A compact preview layer for case studies that will later show the problem, approach, stack, and measurable outcome."
+          title="Projects with clear technical judgment"
+          description="Each project is written around the problem, architecture, data work, constraints, and realistic outcomes."
         />
-        <div className="mt-10 grid gap-4 md:grid-cols-3">
+        <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {projects.map((project, index) => (
             <ProjectCard key={project.slug} project={project} index={index} />
           ))}
@@ -120,8 +172,8 @@ function SkillsSnapshot() {
       <Container>
         <SectionHeader
           eyebrow="Skills snapshot"
-          title="A practical data stack"
-          description="Organized around the roles Sahil is targeting, with enough signal for a recruiter to scan quickly."
+          title="Focused skills, not a keyword dump"
+          description="Grouped around the work shown in the projects: analysis, backend data systems, and practical ML evaluation."
         />
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {skillGroups.map((group, index) => {
@@ -168,19 +220,19 @@ function AboutMe() {
       <Container className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
         <SectionHeader
           eyebrow="About me"
-          title="Focused on useful, explainable data work"
-          description="The portfolio is designed to make project judgment visible: what problem was solved, what data work was done, and how the result can be trusted."
+          title="Building real-world data systems while studying in Germany"
+          description="Sahil focuses on practical data products: clean inputs, reliable transformations, clear APIs, and dashboards or models that can be explained."
         />
         <MotionFade className="space-y-5 text-base leading-8 text-slate-300">
           <p>
-            Sahil is a Master&apos;s Data Science student in Germany targeting
-            roles where analysis, engineering, and practical ML meet real
-            product or business questions.
+            Sahil is a Master&apos;s Data Science student in Germany building
+            portfolio projects that connect analysis, backend data workflows,
+            and model evaluation to realistic product or operations questions.
           </p>
           <p>
-            This site will prioritize clear case studies over buzzwords:
-            concise context, honest technical choices, and artifacts recruiters
-            can evaluate quickly.
+            The goal is to show how he thinks through data problems: define the
+            use case, structure the data, build a maintainable workflow, and
+            communicate limitations clearly.
           </p>
         </MotionFade>
       </Container>

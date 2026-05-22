@@ -4,7 +4,7 @@ export const profile = {
   location: "Germany",
   email: "hello@example.com",
   summary:
-    "Building data analytics, data engineering, and ML projects with Python, SQL, FastAPI, PostgreSQL, and modern dashboards.",
+    "Building practical data analytics, data engineering, and ML projects with Python, SQL, FastAPI, PostgreSQL, and dashboard-ready workflows.",
   targetRoles:
     "Working Student / Intern roles in Data Analytics, Data Engineering, and ML.",
   links: {
