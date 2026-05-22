@@ -13,7 +13,7 @@ export const profile = {
     filename: "Sahil-Dubey-Resume.pdf",
   },
   links: {
-    github: "https://github.com/sahildubey0206",
+    github: "https://github.com/Sahil-dub",
     githubLabel: "GitHub",
     linkedin: "https://www.linkedin.com/in/sahildubey45",
     linkedinLabel: "LinkedIn",
