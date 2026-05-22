@@ -13,6 +13,6 @@ export const experience: ExperienceItem[] = [
     location: "Germany",
     period: "Current",
     summary:
-      "Placeholder entry for education and relevant applied data science work.",
+      "Academic focus on applied data science, analytics workflows, and practical machine learning projects.",
   },
 ];

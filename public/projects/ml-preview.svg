@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
-  <title id="title">Machine learning workflow placeholder</title>
+  <title id="title">Machine learning workflow preview</title>
   <desc id="desc">A dark machine learning dashboard preview with evaluation chart and model cards.</desc>
   <rect width="960" height="540" fill="#020617"/>
   <rect x="56" y="54" width="848" height="432" rx="18" fill="#0f172a" stroke="#1e293b"/>

@@ -127,7 +127,7 @@ npm run build
 
 ## Replace Before Final Deployment
 
-Update these placeholders before sharing the final portfolio:
+Update these items before sharing the final portfolio:
 
 - Real email in `content/profile.ts`
 - Real LinkedIn URL in `content/profile.ts`
@@ -141,4 +141,4 @@ Update these placeholders before sharing the final portfolio:
 
 - No analytics are configured yet.
 - No backend or contact form is included.
-- Placeholder links are intentionally marked until real URLs are available.
+- Unavailable project links are intentionally shown as coming soon until real URLs are available.

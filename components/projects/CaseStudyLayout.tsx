@@ -73,14 +73,22 @@ export function CaseStudyLayout({ project }: CaseStudyLayoutProps) {
               ))}
             </div>
             <div className="mt-6 grid gap-2">
-              <Button href={project.githubUrl} variant="secondary">
-                <Code2 aria-hidden="true" className="mr-2 h-4 w-4" />
-                GitHub
-              </Button>
-              <Button href={project.demoUrl} variant="secondary">
-                <ExternalLink aria-hidden="true" className="mr-2 h-4 w-4" />
-                Dashboard / Demo
-              </Button>
+              {project.githubUrl ? (
+                <Button href={project.githubUrl} variant="secondary">
+                  <Code2 aria-hidden="true" className="mr-2 h-4 w-4" />
+                  GitHub
+                </Button>
+              ) : (
+                <DisabledAction label="Repo coming soon" />
+              )}
+              {project.demoUrl ? (
+                <Button href={project.demoUrl} variant="secondary">
+                  <ExternalLink aria-hidden="true" className="mr-2 h-4 w-4" />
+                  Dashboard / Demo
+                </Button>
+              ) : (
+                <DisabledAction label="Demo coming soon" />
+              )}
             </div>
           </aside>
 
@@ -101,13 +109,24 @@ export function CaseStudyLayout({ project }: CaseStudyLayoutProps) {
             <CaseStudySection
               title="Links"
               body={[
-                "GitHub and dashboard/demo links are placeholders until the final repositories and deployments are attached.",
+                "GitHub and dashboard/demo links are shown when a repository or deployment is available.",
               ]}
             />
           </div>
         </div>
       </Container>
     </main>
+  );
+}
+
+function DisabledAction({ label }: { label: string }) {
+  return (
+    <span
+      aria-disabled="true"
+      className="inline-flex min-h-11 items-center justify-center rounded-md border border-white/10 bg-white/[0.03] px-4 text-center text-sm font-medium text-slate-500"
+    >
+      {label}
+    </span>
   );
 }
 

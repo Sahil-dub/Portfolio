@@ -71,24 +71,32 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
         </div>
 
         <div className="mt-6 grid gap-2 sm:grid-cols-3 xl:grid-cols-1 2xl:grid-cols-3">
-          <Button
-            href={project.githubUrl}
-            variant="secondary"
-            className="h-10 px-3 text-xs"
-            aria-label={`Open GitHub for ${project.title}`}
-          >
-            <Code2 aria-hidden="true" className="mr-1.5 h-3.5 w-3.5" />
-            GitHub
-          </Button>
-          <Button
-            href={project.demoUrl}
-            variant="secondary"
-            className="h-10 px-3 text-xs"
-            aria-label={`Open dashboard or demo for ${project.title}`}
-          >
-            <ExternalLink aria-hidden="true" className="mr-1.5 h-3.5 w-3.5" />
-            Dashboard
-          </Button>
+          {project.githubUrl ? (
+            <Button
+              href={project.githubUrl}
+              variant="secondary"
+              className="h-10 px-3 text-xs"
+              aria-label={`Open GitHub for ${project.title}`}
+            >
+              <Code2 aria-hidden="true" className="mr-1.5 h-3.5 w-3.5" />
+              GitHub
+            </Button>
+          ) : (
+            <DisabledAction label="Repo coming soon" />
+          )}
+          {project.demoUrl ? (
+            <Button
+              href={project.demoUrl}
+              variant="secondary"
+              className="h-10 px-3 text-xs"
+              aria-label={`Open dashboard or demo for ${project.title}`}
+            >
+              <ExternalLink aria-hidden="true" className="mr-1.5 h-3.5 w-3.5" />
+              Dashboard
+            </Button>
+          ) : (
+            <DisabledAction label="Demo coming soon" />
+          )}
           <Button
             href={project.caseStudyUrl}
             className="h-10 px-3 text-xs"
@@ -100,5 +108,16 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
         </div>
       </div>
     </motion.article>
+  );
+}
+
+function DisabledAction({ label }: { label: string }) {
+  return (
+    <span
+      aria-disabled="true"
+      className="inline-flex min-h-10 items-center justify-center rounded-md border border-white/10 bg-white/[0.03] px-3 text-center text-xs font-medium text-slate-500"
+    >
+      {label}
+    </span>
   );
 }

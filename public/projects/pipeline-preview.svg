@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
-  <title id="title">Data pipeline placeholder</title>
+  <title id="title">Data pipeline preview</title>
   <desc id="desc">A dark data pipeline preview showing ingestion, processing, storage, and API stages.</desc>
   <rect width="960" height="540" fill="#020617"/>
   <rect x="56" y="72" width="848" height="396" rx="18" fill="#0f172a" stroke="#1e293b"/>
