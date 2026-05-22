@@ -90,7 +90,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
             href={project.caseStudyUrl}
             className="h-10 px-3 text-xs"
           >
-            Case
+            Case Study
             <ArrowRight aria-hidden="true" className="ml-1.5 h-3.5 w-3.5" />
           </Button>
         </div>
