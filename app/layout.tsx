@@ -15,6 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://portfolio-one-nu-47.vercel.app/"),
+
   title: "Sahil Dubey | Data Science Portfolio",
   description:
     "Data Science portfolio for Sahil Dubey, focused on Data Analytics, Data Engineering, ML projects, and Working Student roles in Germany.",
