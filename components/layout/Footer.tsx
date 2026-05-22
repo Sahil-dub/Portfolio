@@ -29,7 +29,7 @@ export function Footer() {
             <a
               key={link.href}
               href={link.href}
-              className="transition hover:text-white"
+              className="rounded-sm transition hover:text-white focus:outline-none focus:ring-2 focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-950"
               target={link.href.startsWith("http") ? "_blank" : undefined}
               rel={link.href.startsWith("http") ? "noreferrer" : undefined}
             >
@@ -40,7 +40,7 @@ export function Footer() {
             <a
               href={profile.resume.href}
               download
-              className="transition hover:text-white"
+              className="rounded-sm transition hover:text-white focus:outline-none focus:ring-2 focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-950"
             >
               Resume
             </a>

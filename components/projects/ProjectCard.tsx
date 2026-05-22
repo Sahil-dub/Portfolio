@@ -27,11 +27,12 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
           src={project.previewImage}
           alt={`${project.title} preview`}
           fill
-          sizes="(min-width: 768px) 33vw, 100vw"
+          sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
+          priority={index < 2}
           className="object-cover opacity-80 transition duration-500 group-hover:scale-[1.04] group-hover:opacity-100"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
-        <div className="absolute bottom-3 left-3 translate-y-2 rounded-md border border-white/15 bg-slate-950/75 px-2.5 py-1 text-xs font-medium text-sky-100 opacity-0 backdrop-blur transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+        <div className="absolute bottom-3 left-3 translate-y-2 rounded-md border border-white/15 bg-slate-950/75 px-2.5 py-1 text-xs font-medium text-sky-100 opacity-0 backdrop-blur transition duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100">
           Dashboard preview
         </div>
       </div>
@@ -51,7 +52,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
           ))}
         </div>
 
-        <h3 className="mt-5 text-xl font-semibold tracking-tight text-white">
+        <h3 className="mt-5 text-lg font-semibold tracking-tight text-white sm:text-xl">
           {project.title}
         </h3>
         <p className="mt-3 flex-1 text-sm leading-6 text-slate-400">
@@ -69,11 +70,12 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
           ))}
         </div>
 
-        <div className="mt-6 grid gap-2 sm:grid-cols-3">
+        <div className="mt-6 grid gap-2 sm:grid-cols-3 xl:grid-cols-1 2xl:grid-cols-3">
           <Button
             href={project.githubUrl}
             variant="secondary"
             className="h-10 px-3 text-xs"
+            aria-label={`Open GitHub for ${project.title}`}
           >
             <Code2 aria-hidden="true" className="mr-1.5 h-3.5 w-3.5" />
             GitHub
@@ -82,6 +84,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
             href={project.demoUrl}
             variant="secondary"
             className="h-10 px-3 text-xs"
+            aria-label={`Open dashboard or demo for ${project.title}`}
           >
             <ExternalLink aria-hidden="true" className="mr-1.5 h-3.5 w-3.5" />
             Dashboard
@@ -89,6 +92,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
           <Button
             href={project.caseStudyUrl}
             className="h-10 px-3 text-xs"
+            aria-label={`Read case study for ${project.title}`}
           >
             Case Study
             <ArrowRight aria-hidden="true" className="ml-1.5 h-3.5 w-3.5" />

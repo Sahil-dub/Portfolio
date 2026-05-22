@@ -72,10 +72,10 @@ function Hero() {
   return (
     <section className="relative border-b border-white/10">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(56,189,248,0.12),transparent_32%),radial-gradient(circle_at_80%_10%,rgba(34,197,94,0.09),transparent_28%)]" />
-      <Container className="grid gap-12 py-20 sm:py-28 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+      <Container className="grid gap-10 py-16 sm:py-24 lg:grid-cols-[1.2fr_0.8fr] lg:items-end lg:py-28">
         <MotionFade className="max-w-4xl">
           <Badge>Open to Working Student / Intern roles</Badge>
-          <h1 className="mt-7 text-5xl font-semibold tracking-tight text-white sm:text-7xl">
+          <h1 className="mt-7 text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
             {profile.name}
           </h1>
           <p className="mt-5 text-xl font-medium text-sky-200 sm:text-2xl">
@@ -155,7 +155,7 @@ function Highlights() {
 
 function FeaturedProjects() {
   return (
-    <section className="border-b border-white/10 py-18 sm:py-24">
+    <section className="border-b border-white/10 py-16 sm:py-24">
       <Container>
         <SectionHeader
           eyebrow="Featured projects"
@@ -174,7 +174,7 @@ function FeaturedProjects() {
 
 function SkillsSnapshot() {
   return (
-    <section className="border-b border-white/10 py-18 sm:py-24">
+    <section className="border-b border-white/10 py-16 sm:py-24">
       <Container>
         <SectionHeader
           eyebrow="Skills snapshot"
@@ -222,7 +222,7 @@ function SkillsSnapshot() {
 
 function AboutMe() {
   return (
-    <section className="border-b border-white/10 py-18 sm:py-24">
+    <section className="border-b border-white/10 py-16 sm:py-24">
       <Container className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
         <SectionHeader
           eyebrow="About me"
@@ -248,7 +248,7 @@ function AboutMe() {
 
 function ContactCTA({ resumeExists }: { resumeExists: boolean }) {
   return (
-    <section className="py-18 sm:py-24">
+    <section className="py-16 sm:py-24">
       <Container>
         <MotionFade className="rounded-lg border border-sky-300/20 bg-sky-300/[0.06] p-6 sm:p-8">
           <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-start">
@@ -267,26 +267,41 @@ function ContactCTA({ resumeExists }: { resumeExists: boolean }) {
 
             <div className="rounded-lg border border-white/10 bg-slate-950/40 p-4">
               <div className="grid gap-3 sm:grid-cols-2">
-              <Button href={`mailto:${profile.email}`}>
-                <Mail aria-hidden="true" className="mr-2 h-4 w-4" />
-                Email
-              </Button>
-              <Button href={profile.links.linkedin} variant="secondary">
-                {profile.links.linkedinLabel}
-              </Button>
-              <Button href={profile.links.github} variant="secondary">
-                {profile.links.githubLabel}
-              </Button>
-              {resumeExists ? (
-                <Button href={profile.resume.href} download>
-                  <Download aria-hidden="true" className="mr-2 h-4 w-4" />
-                  Resume
+                <Button
+                  href={`mailto:${profile.email}`}
+                  aria-label={`Email ${profile.name}`}
+                >
+                  <Mail aria-hidden="true" className="mr-2 h-4 w-4" />
+                  Email
                 </Button>
-              ) : (
-                <span className="inline-flex min-h-11 items-center justify-center rounded-md border border-dashed border-white/15 px-4 text-center text-sm font-medium text-slate-400">
-                  Resume PDF missing
-                </span>
-              )}
+                <Button
+                  href={profile.links.linkedin}
+                  variant="secondary"
+                  aria-label={profile.links.linkedinLabel}
+                >
+                  {profile.links.linkedinLabel}
+                </Button>
+                <Button
+                  href={profile.links.github}
+                  variant="secondary"
+                  aria-label={profile.links.githubLabel}
+                >
+                  {profile.links.githubLabel}
+                </Button>
+                {resumeExists ? (
+                  <Button
+                    href={profile.resume.href}
+                    download
+                    aria-label="Download Sahil Dubey resume"
+                  >
+                    <Download aria-hidden="true" className="mr-2 h-4 w-4" />
+                    Resume
+                  </Button>
+                ) : (
+                  <span className="inline-flex min-h-11 items-center justify-center rounded-md border border-dashed border-white/15 px-4 text-center text-sm font-medium text-slate-400">
+                    Resume PDF missing
+                  </span>
+                )}
               </div>
               {!resumeExists && (
                 <p className="mt-3 text-xs leading-5 text-slate-500">

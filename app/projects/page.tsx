@@ -30,7 +30,7 @@ export default function ProjectsPage() {
       </section>
 
       <Container className="py-12 sm:py-16">
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {projects.map((project, index) => (
             <ProjectCard key={project.slug} project={project} index={index} />
           ))}

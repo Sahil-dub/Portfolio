@@ -24,7 +24,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex h-11 items-center justify-center rounded-md px-4 text-sm font-medium transition focus:outline-none focus:ring-2 focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-950",
+    "inline-flex min-h-11 items-center justify-center rounded-md px-4 text-center text-sm font-medium transition duration-200 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-950 active:translate-y-0",
     variants[variant],
     className,
   );
