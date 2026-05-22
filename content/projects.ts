@@ -28,8 +28,8 @@ export const projects: Project[] = [
     techStack: ["Python", "SQL", "FastAPI", "PostgreSQL", "Dashboarding"],
     status: "In progress",
     types: ["Analytics", "Backend"],
-    githubUrl: "#",
-    demoUrl: "#",
+    githubUrl: "https://github.com/Sahil-dub/Spensense-AI",
+    demoUrl: "null",
     caseStudyUrl: "/projects/spendsense-ai",
     previewImage: "/projects/analytics-preview.svg",
     overview:
@@ -68,8 +68,8 @@ export const projects: Project[] = [
     techStack: ["Python", "Pandas", "scikit-learn", "Model evaluation"],
     status: "Case study draft",
     types: ["ML", "Analytics"],
-    githubUrl: "#",
-    demoUrl: "#",
+    githubUrl: "null",
+    demoUrl: "null",
     caseStudyUrl: "/projects/industrial-sensor-quality-prediction",
     previewImage: "/projects/ml-preview.svg",
     overview:
@@ -108,8 +108,8 @@ export const projects: Project[] = [
     techStack: ["Python", "SQL", "PostgreSQL", "ETL"],
     status: "Case study draft",
     types: ["Data Engineering", "Analytics"],
-    githubUrl: "#",
-    demoUrl: "#",
+    githubUrl: "https://github.com/Sahil-dub/supply-chain-delay-intelligence-platform",
+    demoUrl: "null",
     caseStudyUrl: "/projects/supply-chain-analytics-pipeline",
     previewImage: "/projects/pipeline-preview.svg",
     overview:
@@ -148,8 +148,8 @@ export const projects: Project[] = [
     techStack: ["Python", "FastAPI", "PostgreSQL", "Automation"],
     status: "In progress",
     types: ["Backend", "Data Engineering"],
-    githubUrl: "#",
-    demoUrl: "#",
+    githubUrl: "null",
+    demoUrl: "null",
     caseStudyUrl: "/projects/job-application-manager-bot",
     previewImage: "/projects/pipeline-preview.svg",
     overview:
