@@ -1,4 +1,6 @@
-import { BarChart3, Database, LineChart, Mail } from "lucide-react";
+import { existsSync } from "node:fs";
+import { join } from "node:path";
+import { BarChart3, Database, Download, LineChart, Mail } from "lucide-react";
 import { ProjectCard } from "@/components/projects/ProjectCard";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -50,6 +52,10 @@ const highlights = [
 ];
 
 export default function Home() {
+  const resumeExists = existsSync(
+    join(process.cwd(), "public", "resume", profile.resume.filename),
+  );
+
   return (
     <main className="flex-1 overflow-hidden">
       <Hero />
@@ -57,7 +63,7 @@ export default function Home() {
       <FeaturedProjects />
       <SkillsSnapshot />
       <AboutMe />
-      <ContactCTA />
+      <ContactCTA resumeExists={resumeExists} />
     </main>
   );
 }
@@ -85,10 +91,10 @@ function Hero() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Button href={`mailto:${profile.email}`}>Contact Sahil</Button>
             <Button href={profile.links.github} variant="secondary">
-              GitHub
+              {profile.links.githubLabel}
             </Button>
             <Button href={profile.links.linkedin} variant="secondary">
-              LinkedIn
+              {profile.links.linkedinLabel}
             </Button>
           </div>
         </MotionFade>
@@ -240,30 +246,53 @@ function AboutMe() {
   );
 }
 
-function ContactCTA() {
+function ContactCTA({ resumeExists }: { resumeExists: boolean }) {
   return (
     <section className="py-18 sm:py-24">
       <Container>
         <MotionFade className="rounded-lg border border-sky-300/20 bg-sky-300/[0.06] p-6 sm:p-8">
-          <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-start">
             <div>
-              <Badge>Contact</Badge>
+              <Badge>Recruiter contact</Badge>
               <h2 className="mt-5 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                Let&apos;s talk about data roles.
+                Let&apos;s talk about working student or intern roles.
               </h2>
               <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-300 sm:text-base">
-                For Working Student or Intern opportunities in analytics, data
-                engineering, or ML, the fastest path is email or LinkedIn.
+                If Sahil&apos;s projects look relevant for a Data Analytics,
+                Data Engineering, or ML opening, email or LinkedIn is the best
+                next step. Resume download will appear here once the PDF is
+                added to the portfolio.
               </p>
             </div>
-            <div className="flex flex-wrap gap-3">
+
+            <div className="rounded-lg border border-white/10 bg-slate-950/40 p-4">
+              <div className="grid gap-3 sm:grid-cols-2">
               <Button href={`mailto:${profile.email}`}>
                 <Mail aria-hidden="true" className="mr-2 h-4 w-4" />
                 Email
               </Button>
               <Button href={profile.links.linkedin} variant="secondary">
-                LinkedIn
+                {profile.links.linkedinLabel}
               </Button>
+              <Button href={profile.links.github} variant="secondary">
+                {profile.links.githubLabel}
+              </Button>
+              {resumeExists ? (
+                <Button href={profile.resume.href} download>
+                  <Download aria-hidden="true" className="mr-2 h-4 w-4" />
+                  Resume
+                </Button>
+              ) : (
+                <span className="inline-flex min-h-11 items-center justify-center rounded-md border border-dashed border-white/15 px-4 text-center text-sm font-medium text-slate-400">
+                  Resume PDF missing
+                </span>
+              )}
+              </div>
+              {!resumeExists && (
+                <p className="mt-3 text-xs leading-5 text-slate-500">
+                  Expected file: {profile.resume.href}
+                </p>
+              )}
             </div>
           </div>
         </MotionFade>

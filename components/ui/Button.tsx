@@ -29,7 +29,11 @@ export function Button({
     className,
   );
 
-  if (href.startsWith("http") || href.startsWith("mailto:")) {
+  if (
+    href.startsWith("http") ||
+    href.startsWith("mailto:") ||
+    href.endsWith(".pdf")
+  ) {
     return (
       <a
         className={classes}
