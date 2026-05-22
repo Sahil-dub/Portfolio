@@ -17,7 +17,46 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Sahil Dubey | Data Science Portfolio",
   description:
-    "Recruiter-focused portfolio for Sahil Dubey, a Master's Data Science student targeting Data Analytics, Data Engineering, and ML roles.",
+    "Data Science portfolio for Sahil Dubey, focused on Data Analytics, Data Engineering, ML projects, and Working Student roles in Germany.",
+  authors: [{ name: "Sahil Dubey" }],
+  creator: "Sahil Dubey",
+  keywords: [
+    "Sahil Dubey",
+    "Data Science Portfolio",
+    "Data Analytics",
+    "Data Engineering",
+    "Machine Learning",
+    "Working Student Germany",
+    "Python",
+    "SQL",
+    "FastAPI",
+    "PostgreSQL",
+  ],
+  openGraph: {
+    title: "Sahil Dubey | Data Science Portfolio",
+    description:
+      "Recruiter-focused portfolio for Data Analytics, Data Engineering, and ML Working Student roles in Germany.",
+    type: "website",
+    locale: "en_US",
+    siteName: "Sahil Dubey Portfolio",
+  },
+  twitter: {
+    card: "summary",
+    title: "Sahil Dubey | Data Science Portfolio",
+    description:
+      "Projects in Data Analytics, Data Engineering, and ML for Working Student roles in Germany.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 export default function RootLayout({
