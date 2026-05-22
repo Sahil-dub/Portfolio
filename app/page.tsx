@@ -1,6 +1,15 @@
 import { existsSync } from "node:fs";
 import { join } from "node:path";
-import { BarChart3, Database, Download, LineChart, Mail } from "lucide-react";
+import {
+  BarChart3,
+  Code2,
+  Database,
+  Download,
+  LineChart,
+  Mail,
+  Rocket,
+  Server,
+} from "lucide-react";
 import { ProjectCard } from "@/components/projects/ProjectCard";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -8,25 +17,9 @@ import { Container } from "@/components/layout/Container";
 import { MotionFade } from "@/components/ui/MotionFade";
 import { profile } from "@/content/profile";
 import { projects } from "@/content/projects";
-import { skills } from "@/content/skills";
+import { currentlyLearning, skillCategories } from "@/content/skills";
 
-const skillGroups = [
-  {
-    title: "Analytics",
-    items: skills.analytics,
-    icon: BarChart3,
-  },
-  {
-    title: "Engineering",
-    items: skills.engineering,
-    icon: Database,
-  },
-  {
-    title: "Machine Learning",
-    items: skills.machineLearning,
-    icon: LineChart,
-  },
-];
+const skillIcons = [Code2, BarChart3, LineChart, Database, Server];
 
 const highlights = [
   {
@@ -178,17 +171,17 @@ function SkillsSnapshot() {
       <Container>
         <SectionHeader
           eyebrow="Skills snapshot"
-          title="Focused skills, not a keyword dump"
-          description="Grouped around the work shown in the projects: analysis, backend data systems, and practical ML evaluation."
+          title="Technical skills I can discuss in interviews"
+          description="Grouped by how the skills show up in projects: analysis, ML workflows, backend APIs, and data preparation."
         />
-        <div className="mt-10 grid gap-4 md:grid-cols-3">
-          {skillGroups.map((group, index) => {
-            const Icon = group.icon;
+        <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {skillCategories.map((group, index) => {
+            const Icon = skillIcons[index] ?? Code2;
 
             return (
               <MotionFade
                 key={group.title}
-                className="rounded-lg border border-white/10 bg-slate-900/50 p-5"
+                className="group rounded-lg border border-white/10 bg-slate-900/50 p-5 transition duration-300 hover:-translate-y-1 hover:border-sky-300/30 hover:bg-white/[0.055] focus-within:border-sky-300/30"
                 transition={{
                   duration: 0.45,
                   delay: index * 0.08,
@@ -201,11 +194,14 @@ function SkillsSnapshot() {
                 <h3 className="mt-5 text-lg font-semibold text-white">
                   {group.title}
                 </h3>
-                <div className="mt-4 flex flex-wrap gap-2">
+                <p className="mt-3 text-sm leading-6 text-slate-400">
+                  {group.description}
+                </p>
+                <div className="mt-5 flex flex-wrap gap-2">
                   {group.items.map((item) => (
                     <span
                       key={item}
-                      className="rounded-md bg-white/5 px-2.5 py-1 text-xs text-slate-300"
+                      className="rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-medium text-slate-300 transition group-hover:border-white/15 group-hover:text-slate-200"
                     >
                       {item}
                     </span>
@@ -215,6 +211,38 @@ function SkillsSnapshot() {
             );
           })}
         </div>
+        <MotionFade
+          className="mt-5 rounded-lg border border-dashed border-sky-300/20 bg-sky-300/[0.045] p-5"
+          transition={{ duration: 0.45, delay: 0.12, ease: "easeOut" }}
+        >
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+            <div>
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-md bg-sky-300/10 text-sky-200">
+                  <Rocket aria-hidden="true" className="h-5 w-5" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-white">
+                    Currently learning
+                  </h3>
+                  <p className="mt-1 text-sm text-slate-400">
+                    Active learning areas, not expert-level claims.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-2 sm:max-w-xl sm:justify-end">
+              {currentlyLearning.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-md border border-sky-300/15 bg-sky-300/10 px-2.5 py-1 text-xs font-medium text-sky-100"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        </MotionFade>
       </Container>
     </section>
   );
