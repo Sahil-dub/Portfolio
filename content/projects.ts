@@ -141,6 +141,80 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "business-kpi-dashboard-analytics-system",
+    title: "Business KPI Dashboard Analytics System",
+    businessProblem:
+      "Business performance data is difficult to act on when KPIs are scattered across tables, spreadsheets, and disconnected views.",
+    techStack: ["Python", "SQL", "Dashboarding", "KPI analysis"],
+    status: "Case study draft",
+    types: ["Analytics"],
+    githubUrl: "https://github.com/Sahil-dub/business-kpi-dashboard-analytics-system",
+    demoUrl: null,
+    caseStudyUrl: "/projects/business-kpi-dashboard-analytics-system",
+    previewImage: "/projects/analytics-preview.svg",
+    overview:
+      "An analytics project focused on structuring business KPI data into clear dashboard views for performance review and decision support.",
+    dataInputs: [
+      "Business KPI-style records with time periods, categories, and performance measures.",
+      "Cleaned metric definitions prepared for repeatable reporting.",
+      "Dashboard-ready summaries for trend and comparison views.",
+    ],
+    approach: [
+      "Defined the KPI questions before designing the dashboard structure.",
+      "Prepared data summaries that keep metric logic separate from presentation.",
+      "Organized dashboard views around performance trends, category comparisons, and review-friendly summaries.",
+    ],
+    results: [
+      "Created a clearer analytics workflow for turning KPI records into dashboard-ready views.",
+      "Kept outcomes focused on portfolio evidence rather than claiming business impact without production data.",
+    ],
+    challenges: [
+      "Keeping KPI definitions consistent across views.",
+      "Avoiding a dashboard that looks busy but does not help answer business questions.",
+    ],
+    learnings: [
+      "Strong KPI dashboards depend on metric clarity before visual design.",
+      "Recruiter-friendly analytics projects should show how the dashboard supports decisions.",
+    ],
+  },
+  {
+    slug: "steam-insights-dashboard",
+    title: "Steam Insights Dashboard",
+    businessProblem:
+      "Game catalog and engagement data can reveal useful market patterns, but raw platform-style datasets need cleaning and focused exploration before they are understandable.",
+    techStack: ["Python", "SQL", "Data visualization", "Dashboarding"],
+    status: "Case study draft",
+    types: ["Analytics"],
+    githubUrl: "https://github.com/Sahil-dub/steam-insights-dashboard",
+    demoUrl: null,
+    caseStudyUrl: "/projects/steam-insights-dashboard",
+    previewImage: "/projects/analytics-preview.svg",
+    overview:
+      "An analytics dashboard project for exploring Steam-style game data, genre patterns, pricing signals, and review or engagement trends.",
+    dataInputs: [
+      "Steam-style game catalog records with genres, pricing, ratings, and metadata.",
+      "Cleaned fields for category comparison and trend analysis.",
+      "Aggregated views prepared for dashboard exploration.",
+    ],
+    approach: [
+      "Cleaned and grouped platform-style records into analysis-friendly categories.",
+      "Focused dashboard views on market patterns instead of overwhelming users with raw tables.",
+      "Used visual summaries to compare genres, price ranges, and review patterns.",
+    ],
+    results: [
+      "Created a portfolio-ready analytics project showing exploratory dashboard thinking.",
+      "Kept conclusions descriptive and avoided claiming market predictions from exploratory data.",
+    ],
+    challenges: [
+      "Handling noisy category labels and incomplete catalog-style data.",
+      "Choosing visuals that summarize patterns without overclaiming causality.",
+    ],
+    learnings: [
+      "Exploratory dashboards work best when they guide the next question.",
+      "Consumer platform data needs careful interpretation because popularity signals can be biased.",
+    ],
+  },
+  {
     slug: "job-application-manager-bot",
     title: "Job Application Manager Bot",
     businessProblem:
