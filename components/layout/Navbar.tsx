@@ -11,11 +11,11 @@ const links = [
 
 export function Navbar() {
   return (
-    <header className="border-b border-slate-200/80 bg-stone-50/90 backdrop-blur">
+    <header className="sticky top-0 z-30 border-b border-white/10 bg-slate-950/85 backdrop-blur">
       <Container className="flex h-16 items-center justify-between">
         <Link
           href="/"
-          className="text-sm font-semibold tracking-tight text-slate-950"
+          className="text-sm font-semibold tracking-tight text-white"
         >
           Sahil Dubey
         </Link>
@@ -28,7 +28,7 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 aria-label={link.label}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-md text-slate-600 transition hover:bg-white hover:text-slate-950"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-md text-slate-400 transition hover:bg-white/10 hover:text-white"
                 target={link.href.startsWith("http") ? "_blank" : undefined}
                 rel={
                   link.href.startsWith("http") ? "noreferrer" : undefined

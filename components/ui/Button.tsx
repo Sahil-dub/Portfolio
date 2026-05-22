@@ -11,9 +11,9 @@ type ButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
 };
 
 const variants: Record<ButtonVariant, string> = {
-  primary: "bg-slate-950 text-white hover:bg-slate-800",
+  primary: "bg-sky-300 text-slate-950 hover:bg-sky-200",
   secondary:
-    "border border-slate-300 bg-white text-slate-800 hover:border-slate-400 hover:bg-slate-50",
+    "border border-white/15 bg-white/5 text-slate-100 hover:border-white/25 hover:bg-white/10",
 };
 
 export function Button({
@@ -24,7 +24,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex h-11 items-center justify-center rounded-md px-4 text-sm font-medium transition focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-stone-50",
+    "inline-flex h-11 items-center justify-center rounded-md px-4 text-sm font-medium transition focus:outline-none focus:ring-2 focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-950",
     variants[variant],
     className,
   );
